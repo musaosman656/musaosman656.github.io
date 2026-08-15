@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Musa O. Mohammed — Business Analyst, Abu Dhabi</title>
+<meta name="description" content="Business analyst and founder in Abu Dhabi. I connect government data platforms, build KPI frameworks, and ship recruitment products." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#101A24;
+    --ink-soft:#1C2B3A;
+    --slate:#4B5C6E;
+    --paper:#EDEFF2;
+    --panel:#FFFFFF;
+    --brass:#A8752C;
+    --teal:#12655E;
+    --line:#D3D9E0;
+    --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+    --body:"Newsreader",Georgia,"Times New Roman",serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:18px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(18,101,94,.35)}
+  a:hover{border-bottom-color:var(--teal)}
+  :focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+  .wrap{width:min(1120px,92vw);margin:0 auto}
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin:0 0 1.1rem;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--ink);
+    color:var(--paper);
+    padding:clamp(2.5rem,7vw,5.5rem) 0 clamp(2.5rem,5vw,4rem);
+    border-bottom:1px solid var(--ink);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:end}
+  .hero-name{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:clamp(2.6rem,7.6vw,5.6rem);
+    line-height:.92;
+    letter-spacing:-.035em;
+    margin:0 0 1.4rem;
+  }
+  .hero-name span{display:block}
+  .hero-thesis{
+    font-size:clamp(1.05rem,2.1vw,1.4rem);
+    line-height:1.45;
+    color:#C9D3DC;
+    max-width:32ch;
+    margin:0 0 2rem;
+  }
+  .hero-thesis strong{color:#fff;font-weight:500}
+  .hero-meta{
+    font-family:var(--mono);
+    font-size:.78rem;
+    letter-spacing:.03em;
+    color:#8DA0B2;
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem 1.4rem;
+  }
+  .hero-meta a{color:#C9D3DC;border-bottom-color:rgba(201,211,220,.3)}
+  .hero-meta a:hover{color:var(--brass);border-bottom-color:var(--brass)}
+
+  /* signature: the exchange grid */
+  .exchange{width:100%}
+  .exchange svg{width:100%;height:auto;display:block}
+  .exchange-cap{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.08em;
+    color:#7E93A6;
+    margin-top:.9rem;
+    line-height:1.5;
+  }
+  .node{fill:#2E4356}
+  .node.live{fill:var(--brass)}
+  .link-line{stroke:var(--brass);stroke-width:1;opacity:0}
+
+  .fade-up{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.3,1) forwards}
+  .d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.31s}.d4{animation-delay:.44s}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  /* ---------- SECTIONS ---------- */
+  .band{padding:clamp(3rem,7vw,5.5rem) 0;border-bottom:1px solid var(--line)}
+  .band-title{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:clamp(1.5rem,3vw,2.1rem);
+    letter-spacing:-.02em;
+    line-height:1.1;
+    margin:0 0 2.5rem;
+    max-width:24ch;
+  }
+
+  .cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,3vw,2.5rem)}
+  .cap-h{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:1.15rem;
+    letter-spacing:-.01em;
+    margin:0 0 .6rem;
+  }
+  .cap-p{margin:0;color:var(--slate);font-size:1rem;line-height:1.55}
+  .cap-num{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.12em;
+    color:var(--brass);
+    display:block;
+    margin-bottom:.9rem;
+    padding-top:.9rem;
+    border-top:2px solid var(--ink);
+  }
+
+  /* work cards */
+  .work{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,3vw,2rem)}
+  .card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    padding:clamp(1.6rem,3vw,2.2rem);
+    display:flex;
+    flex-direction:column;
+  }
+  .card-role{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--slate);
+    margin:0 0 .8rem;
+  }
+  .card-h{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(1.4rem,2.6vw,1.85rem);
+    letter-spacing:-.025em;
+    line-height:1.05;
+    margin:0 0 1rem;
+  }
+  .card-p{margin:0 0 1.4rem;color:var(--slate);font-size:1rem;line-height:1.55}
+  .card ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+  .card li{
+    padding:.75rem 0;
+    border-bottom:1px solid var(--line);
+    font-size:.95rem;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:1rem;
+    align-items:baseline;
+  }
+  .stat{
+    font-family:var(--mono);
+    font-weight:500;
+    color:var(--brass);
+    font-size:.85rem;
+    white-space:nowrap;
+  }
+
+  /* timeline */
+  .tl{border-top:2px solid var(--ink)}
+  .tl-row{
+    display:grid;
+    grid-template-columns:9rem 1fr 1fr;
+    gap:1.5rem;
+    padding:1.4rem 0;
+    border-bottom:1px solid var(--line);
+    align-items:baseline;
+  }
+  .tl-year{font-family:var(--mono);font-size:.8rem;color:var(--brass);letter-spacing:.04em}
+  .tl-role{font-family:var(--display);font-weight:600;font-size:1.05rem;letter-spacing:-.01em}
+  .tl-org{display:block;font-family:var(--body);font-weight:400;font-size:.92rem;color:var(--slate);margin-top:.2rem}
+  .tl-note{color:var(--slate);font-size:.95rem;line-height:1.5}
+
+  /* projects */
+  .proj{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(2rem,4vw,3rem)}
+  .proj-item{padding:1.5rem 0;border-top:1px solid var(--line)}
+  .proj-h{font-family:var(--display);font-weight:600;font-size:1.1rem;margin:0 0 .4rem;letter-spacing:-.01em}
+  .proj-meta{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--brass);text-transform:uppercase;margin:0 0 .7rem}
+  .proj-p{margin:0;color:var(--slate);font-size:.95rem;line-height:1.55}
+
+  /* toolkit */
+  .kit{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(2rem,5vw,4rem)}
+  .kit-row{display:grid;grid-template-columns:11rem 1fr;gap:1.5rem;padding:.9rem 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .kit-k{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate)}
+  .kit-v{font-size:.95rem;line-height:1.5}
+
+  /* contact */
+  .contact{background:var(--ink);color:var(--paper);padding:clamp(3rem,7vw,5rem) 0}
+  .contact-h{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:clamp(2rem,5.5vw,3.6rem);
+    letter-spacing:-.03em;
+    line-height:1;
+    margin:0 0 1.2rem;
+  }
+  .contact-p{color:#C9D3DC;max-width:46ch;margin:0 0 2.4rem;font-size:1.05rem}
+  .contact-list{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;border-top:1px solid #2E4356;padding-top:1.6rem}
+  .contact-k{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#7E93A6;margin:0 0 .4rem}
+  .contact-v a{color:#fff;border-bottom-color:rgba(255,255,255,.3);font-size:1rem}
+  .contact-v a:hover{color:var(--brass);border-bottom-color:var(--brass)}
+  .colophon{font-family:var(--mono);font-size:.7rem;color:#5E7387;margin-top:3rem;letter-spacing:.05em}
+
+  @media (max-width:860px){
+    body{font-size:17px}
+    .hero-grid{grid-template-columns:1fr;gap:2.5rem;align-items:start}
+    .cols3{grid-template-columns:1fr;gap:2rem}
+    .work{grid-template-columns:1fr}
+    .tl-row{grid-template-columns:1fr;gap:.4rem}
+    .tl-year{order:-1}
+    .proj,.kit{grid-template-columns:1fr}
+    .kit-row{grid-template-columns:1fr;gap:.2rem}
+    .contact-list{grid-template-columns:1fr;gap:1.4rem}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .fade-up{animation:none;opacity:1;transform:none}
+    .link-line{opacity:.5}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow fade-up d1">Abu Dhabi, UAE</p>
+      <h1 class="hero-name fade-up d1"><span>Musa O.</span><span>Mohammed</span></h1>
+      <p class="hero-thesis fade-up d2">I connect government data platforms and build the products that run on them. <strong>Business analyst by day, founder in parallel.</strong></p>
+      <div class="hero-meta fade-up d3">
+        <a href="mailto:musaosman656@gmail.com">musaosman656@gmail.com</a>
+        <a href="tel:+971566676278">+971 56 667 6278</a>
+        <a href="https://linkedin.com/in/musamohd" target="_blank" rel="noopener">linkedin.com/in/musamohd</a>
+      </div>
+    </div>
+
+    <figure class="exchange fade-up d4" style="margin:0">
+      <svg id="exchange-svg" viewBox="0 0 440 200" role="img" aria-label="Diagram of government entities exchanging data across a shared platform layer."></svg>
+      <figcaption class="exchange-cap">Data exchange layer<br>10+ entities coordinated. 50+ active integrations.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+
+  <!-- CAPABILITIES -->
+  <section class="band">
+    <div class="wrap">
+      <p class="eyebrow">What I do</p>
+      <h2 class="band-title">I turn unclear requirements into systems people can use.</h2>
+      <div class="cols3">
+        <div>
+          <span class="cap-num">01 / Analyse</span>
+          <h3 class="cap-h">Requirements and gap analysis</h3>
+          <p class="cap-p">I run workshops with stakeholders, document functional specifications, and find the gaps before development starts. Government entities, enterprise teams, and technical leads all read the same document.</p>
+        </div>
+        <div>
+          <span class="cap-num">02 / Measure</span>
+          <h3 class="cap-h">KPI frameworks and dashboards</h3>
+          <p class="cap-p">I build Power BI reporting that tracks SLA adherence, API integration health, and UAT feedback. Numbers reach leadership on time and hold up under review.</p>
+        </div>
+        <div>
+          <span class="cap-num">03 / Deliver</span>
+          <h3 class="cap-h">Release and UAT coordination</h3>
+          <p class="cap-p">I move work through agile cycles from idea to production. I run acceptance testing, collect feedback, and convert it into the next release plan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRENT WORK -->
+  <section class="band">
+    <div class="wrap">
+      <p class="eyebrow">Current work</p>
+      <h2 class="band-title">Two tracks, one method.</h2>
+      <div class="work">
+
+        <article class="card">
+          <p class="card-role">Business Analyst · June 2024 to present</p>
+          <h3 class="card-h">Department of Government Enablement</h3>
+          <p class="card-p">I support data exchange across Abu Dhabi government. I lead the AI Assistant initiative inside the Service Hub platform, build the KPI framework for the Data Exchange division, and take exchange requests from intake to executive approval under UAE federal data protection standards.</p>
+          <ul>
+            <li><span class="stat">10+</span><span>government entities coordinated across project portfolios</span></li>
+            <li><span class="stat">50+</span><span>active integrations tracked in automated Power BI dashboards</span></li>
+            <li><span class="stat">AD Connect</span><span>API onboarding, authentication, and authorisation</span></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <p class="card-role">Founder · 2026 to present</p>
+          <h3 class="card-h">Kafaa</h3>
+          <p class="card-p">An AI recruitment platform built for the UAE market, with Emiratisation compliance and full Arabic and English support. I set the product vision, built the brand, and structured the company setup with the founding team. The position is competence-based hiring: hire smarter, faster, fairer.</p>
+          <ul>
+            <li><span class="stat">70+</span><span>features mapped across screening, matching, and hiring</span></li>
+            <li><span class="stat">AR / EN</span><span>bilingual brand guidelines and company profile</span></li>
+            <li><span class="stat">Setup</span><span>partnership agreements and ownership framework</span></li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACK RECORD -->
+  <section class="band">
+    <div class="wrap">
+      <p class="eyebrow">Track record</p>
+      <h2 class="band-title">Six years across payments, telecom, and government.</h2>
+      <div class="tl">
+
+        <div class="tl-row">
+          <div class="tl-year">2023 — 2025</div>
+          <div class="tl-role">Co-Founder &amp; Data Analyst<span class="tl-org">JobHunt, Dubai</span></div>
+          <div class="tl-note">Set product direction for a UAE recruitment platform and built the reporting layer for the hiring funnel. Delivered a 20% efficiency gain and cut errors by 15%.</div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-year">2021 — 2023</div>
+          <div class="tl-role">Business Development<span class="tl-org">Wasla Application, Khartoum</span></div>
+          <div class="tl-note">Directed technical strategy and lifted team operational performance by 30%. Set plans against long-term corporate objectives.</div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-year">2021</div>
+          <div class="tl-role">Data Analyst<span class="tl-org">Syber Pay, UAE</span></div>
+          <div class="tl-note">Defined business requirements for provider API integration and modelled transaction data to inform payment security decisions.</div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-year">2020 — 2021</div>
+          <div class="tl-role">Business Analyst<span class="tl-org">Next Pay, Khartoum</span></div>
+          <div class="tl-note">Designed database structures for payment authorisation and configured PostgreSQL for real-time transaction monitoring.</div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-year">2019 — 2020</div>
+          <div class="tl-role">MongoDB Intern<span class="tl-org">Zain Sudan, Khartoum</span></div>
+          <div class="tl-note">Built MongoDB infrastructure for sentiment analysis at 100M+ records and automated data extraction with Python.</div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-year">2015 — 2020</div>
+          <div class="tl-role">B.Sc. (Honors), Statistics and Computer Science<span class="tl-org">University of Khartoum, Faculty of Mathematical Sciences</span></div>
+          <div class="tl-note">Statistical analysis, algorithms, artificial intelligence, computational theory.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="band">
+    <div class="wrap">
+      <p class="eyebrow">Selected projects</p>
+      <h2 class="band-title">Models built to answer a specific question.</h2>
+      <div class="proj">
+
+        <div class="proj-item">
+          <p class="proj-meta">2020 · Python · Telecom fraud</p>
+          <h3 class="proj-h">Simbox Fraud Detection System</h3>
+          <p class="proj-p">Machine learning models that detect simbox fraud with more than 92% accuracy. Validated through A/B testing against historical fraud data.</p>
+        </div>
+
+        <div class="proj-item">
+          <p class="proj-meta">2019 · R · Forecasting</p>
+          <h3 class="proj-h">SES Forecasting Tool</h3>
+          <p class="proj-p">A forecasting algorithm using simple exponential smoothing for anomaly detection. Accuracy landed within 5% for e-commerce inventory planning.</p>
+        </div>
+
+        <div class="proj-item">
+          <p class="proj-meta">2018 · Cox Regression · Health</p>
+          <h3 class="proj-h">Kidney Survival Analysis</h3>
+          <p class="proj-p">Survival analysis on medical datasets that identified five key factors and produced clear risk profiles for treatment planning teams.</p>
+        </div>
+
+        <div class="proj-item">
+          <p class="proj-meta">2019 · Python, Django · Recruitment</p>
+          <h3 class="proj-h">Job Hunter Platform</h3>
+          <p class="proj-p">A database schema for job matching, with candidate skill assessments scored by machine learning for role compatibility.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLKIT -->
+  <section class="band">
+    <div class="wrap">
+      <p class="eyebrow">Toolkit</p>
+      <h2 class="band-title">What I work with.</h2>
+      <div class="kit">
+        <div>
+          <div class="kit-row"><div class="kit-k">Languages</div><div class="kit-v">Python, R, SQL, SAS</div></div>
+          <div class="kit-row"><div class="kit-k">Visualisation</div><div class="kit-v">Power BI, Tableau, Matplotlib, DAX</div></div>
+          <div class="kit-row"><div class="kit-k">Databases</div><div class="kit-v">PostgreSQL, MySQL, MongoDB</div></div>
+        </div>
+        <div>
+          <div class="kit-row"><div class="kit-k">Frameworks</div><div class="kit-v">TensorFlow, Keras, Scikit-learn</div></div>
+          <div class="kit-row"><div class="kit-k">Analytics tools</div><div class="kit-v">Alteryx, SAP Business Objects, Azure Data Factory</div></div>
+          <div class="kit-row"><div class="kit-k">Certifications</div><div class="kit-v">Certified Power BI Developer, Google Data Analytics, UNIDO Entrepreneurship</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOLUNTEERING -->
+  <section class="band">
+    <div class="wrap">
+      <p class="eyebrow">Beyond work</p>
+      <h2 class="band-title">Takaful Charitable Organization, Executive Director.</h2>
+      <p class="cap-p" style="max-width:60ch">I led operations for orphan sponsorship programmes and water infrastructure projects across three communities in Sudan. Earlier, I ran 15+ literature discussion groups at the University of Khartoum library and connected students with Fortune 500 training programmes.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="contact">
+  <div class="wrap">
+    <p class="eyebrow">Get in touch</p>
+    <h2 class="contact-h">Let's talk.</h2>
+    <p class="contact-p">I am open to business analysis roles, data platform work, and conversations about Kafaa. Write to me and I will reply.</p>
+    <div class="contact-list">
+      <div>
+        <p class="contact-k">Email</p>
+        <p class="contact-v" style="margin:0"><a href="mailto:musaosman656@gmail.com">musaosman656@gmail.com</a></p>
+      </div>
+      <div>
+        <p class="contact-k">Phone</p>
+        <p class="contact-v" style="margin:0"><a href="tel:+971566676278">+971 56 667 6278</a></p>
+      </div>
+      <div>
+        <p class="contact-k">LinkedIn</p>
+        <p class="contact-v" style="margin:0"><a href="https://linkedin.com/in/musamohd" target="_blank" rel="noopener">/in/musamohd</a></p>
+      </div>
+    </div>
+    <p class="colophon">Musa O. Mohammed · Abu Dhabi, UAE</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var svg = document.getElementById('exchange-svg');
+  if(!svg) return;
+
+  var NS = 'http://www.w3.org/2000/svg';
+  var cols = 11, rows = 4, padX = 14, padY = 20;
+  var stepX = (440 - padX*2) / (cols - 1);
+  var stepY = (200 - padY*2) / (rows - 1);
+  var nodes = [], lineLayer, nodeLayer;
+
+  lineLayer = document.createElementNS(NS,'g');
+  nodeLayer = document.createElementNS(NS,'g');
+  svg.appendChild(lineLayer);
+  svg.appendChild(nodeLayer);
+
+  for(var r=0;r<rows;r++){
+    for(var c=0;c<cols;c++){
+      var x = padX + c*stepX, y = padY + r*stepY;
+      var rect = document.createElementNS(NS,'rect');
+      rect.setAttribute('x', x-3);
+      rect.setAttribute('y', y-3);
+      rect.setAttribute('width', 6);
+      rect.setAttribute('height', 6);
+      rect.setAttribute('class','node');
+      nodeLayer.appendChild(rect);
+      nodes.push({x:x, y:y, el:rect});
+    }
+  }
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function drawStatic(){
+    var pairs = [[3,27],[14,41],[8,20],[31,6]];
+    pairs.forEach(function(p){
+      var a = nodes[p[0]], b = nodes[p[1]];
+      if(!a || !b) return;
+      var path = document.createElementNS(NS,'path');
+      path.setAttribute('d', arc(a,b));
+      path.setAttribute('fill','none');
+      path.setAttribute('class','link-line');
+      path.style.opacity = .45;
+      lineLayer.appendChild(path);
+      a.el.classList.add('live');
+      b.el.classList.add('live');
+    });
+  }
+
+  function arc(a,b){
+    var mx = (a.x+b.x)/2, my = (a.y+b.y)/2 - Math.abs(a.x-b.x)*0.22 - 8;
+    return 'M'+a.x+' '+a.y+' Q'+mx+' '+my+' '+b.x+' '+b.y;
+  }
+
+  function pulse(){
+    var i = Math.floor(Math.random()*nodes.length);
+    var j = Math.floor(Math.random()*nodes.length);
+    if(i === j) return;
+    var a = nodes[i], b = nodes[j];
+    var path = document.createElementNS(NS,'path');
+    path.setAttribute('d', arc(a,b));
+    path.setAttribute('fill','none');
+    path.setAttribute('class','link-line');
+    lineLayer.appendChild(path);
+
+    var len = path.getTotalLength();
+    path.style.strokeDasharray = len;
+    path.style.strokeDashoffset = len;
+    path.style.opacity = .8;
+    path.style.transition = 'stroke-dashoffset .9s cubic-bezier(.4,0,.2,1), opacity .6s ease .9s';
+
+    requestAnimationFrame(function(){
+      path.style.strokeDashoffset = 0;
+      path.style.opacity = 0;
+    });
+
+    a.el.classList.add('live');
+    b.el.classList.add('live');
+    setTimeout(function(){
+      a.el.classList.remove('live');
+      b.el.classList.remove('live');
+      if(path.parentNode) path.parentNode.removeChild(path);
+    }, 1700);
+  }
+
+  if(reduced){
+    drawStatic();
+  } else {
+    setTimeout(function(){
+      pulse();
+      setInterval(pulse, 1100);
+    }, 700);
+  }
+})();
+</script>
+
+</body>
+</html>
